@@ -2,48 +2,33 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thomas O'Neil Álvarez</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Thomas O'Neil Álvarez - Enlaces</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="icon" type="image/png" href="favicons/estadisticas.ico"/>
 </head>
 <body>
-  <div id="particles-js"></div>
   <div class="container">
     <img src="profile.png" alt="Foto de perfil" class="profile-img" />
     <h1>Thomas O'Neil Álvarez</h1>
-    <p class="description">Ethical Hacker, divulgador y experto en marca personal en LinkedIn</p>
+    <p class="subtitle">Ethical Hacker, divulgador y experto en marca personal en LinkedIn</p>
 
-    <a href="https://github.com/ccyl13" class="link-button" target="_blank">GitHub</a>
-    <a href="https://www.linkedin.com/in/thomasoneil%C3%A1lvarez/" class="link-button" target="_blank">LinkedIn</a>
-    <a href="https://tusendadigital.com/" class="link-button" target="_blank">Desarrollo Web Seguro</a>
-    <a href="https://elrincondelhacker.es/pagina-de-ventas-hazte-viral-linkedin/" class="link-button" target="_blank">Viralízate en LinkedIn</a>
+    <div class="buttons">
+      <a href="https://github.com/ccyl13" target="_blank">
+        <img src="favicons/estadisticas.ico" alt="GitHub" class="icon"/> GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/thomasoneil%C3%A1lvarez/" target="_blank">
+        <img src="favicons/linkedin.ico" alt="LinkedIn" class="icon"/> LinkedIn
+      </a>
+      <a href="https://tusendadigital.com/" target="_blank">
+        <img src="favicons/tusenda.ico" alt="Tu Senda" class="icon"/> Desarrollo Web Seguro
+      </a>
+      <a href="https://elrincondelhacker.es/pagina-de-ventas-hazte-viral-linkedin/" target="_blank">
+        <img src="favicons/instagram.ico" alt="Viralízate" class="icon"/> Viralízate en LinkedIn
+      </a>
+    </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-  <script>
-    particlesJS("particles-js", {
-      particles: {
-        number: { value: 60 },
-        color: { value: "#ffffff" },
-        shape: { type: "circle" },
-        opacity: { value: 0.1 },
-        size: { value: 3 },
-        line_linked: {
-          enable: true,
-          distance: 150,
-          color: "#ffffff",
-          opacity: 0.1,
-          width: 1
-        },
-        move: { enable: true, speed: 1 }
-      },
-      interactivity: {
-        events: {
-          onhover: { enable: true, mode: "repulse" }
-        }
-      }
-    });
-  </script>
+  <div class="background"></div>
 </body>
 </html>
