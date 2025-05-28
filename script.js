@@ -1,67 +1,74 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const canvas = document.createElement("canvas");
-  canvas.id = "background-canvas";
-  document.getElementById("background").appendChild(canvas);
-  const ctx = canvas.getContext("2d");
-
-  let width, height, points;
-
-  function resize() {
-    width = window.innerWidth;
-    height = window.innerHeight;
-    canvas.width = width;
-    canvas.height = height;
-    initPoints();
-  }
-
-  function initPoints() {
-    points = [];
-    for (let i = 0; i < 80; i++) {
-      points.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
-        radius: Math.random() * 1.5 + 0.5
-      });
+// Este script carga automáticamente el efecto de partículas desde un archivo de configuración remoto
+particlesJS('particles-js', {
+  particles: {
+    number: {
+      value: 60,
+      density: {
+        enable: true,
+        value_area: 800
+      }
+    },
+    color: {
+      value: "#ffffff"
+    },
+    shape: {
+      type: "circle",
+      stroke: {
+        width: 0,
+        color: "#000000"
+      },
+      polygon: {
+        nb_sides: 5
+      }
+    },
+    opacity: {
+      value: 0.3,
+      random: false,
+      anim: {
+        enable: false
+      }
+    },
+    size: {
+      value: 3,
+      random: true,
+      anim: {
+        enable: false
+      }
+    },
+    line_linked: {
+      enable: true,
+      distance: 150,
+      color: "#ffffff",
+      opacity: 0.2,
+      width: 1
+    },
+    move: {
+      enable: true,
+      speed: 1.2,
+      direction: "none",
+      random: false,
+      straight: false,
+      out_mode: "out"
     }
-  }
-
-  function draw() {
-    ctx.clearRect(0, 0, width, height);
-
-    for (let i = 0; i < points.length; i++) {
-      const p1 = points[i];
-      p1.x += p1.vx;
-      p1.y += p1.vy;
-
-      if (p1.x < 0 || p1.x > width) p1.vx *= -1;
-      if (p1.y < 0 || p1.y > height) p1.vy *= -1;
-
-      ctx.beginPath();
-      ctx.arc(p1.x, p1.y, p1.radius, 0, Math.PI * 2);
-      ctx.fillStyle = "rgba(255,255,255,0.15)";
-      ctx.fill();
-
-      for (let j = i + 1; j < points.length; j++) {
-        const p2 = points[j];
-        const dx = p1.x - p2.x;
-        const dy = p1.y - p2.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        if (dist < 100) {
-          ctx.beginPath();
-          ctx.moveTo(p1.x, p1.y);
-          ctx.lineTo(p2.x, p2.y);
-          ctx.strokeStyle = "rgba(255,255,255,0.05)";
-          ctx.stroke();
-        }
+  },
+  interactivity: {
+    detect_on: "canvas",
+    events: {
+      onhover: {
+        enable: true,
+        mode: "repulse"
+      },
+      onclick: {
+        enable: false
+      },
+      resize: true
+    },
+    modes: {
+      repulse: {
+        distance: 100,
+        duration: 0.4
       }
     }
-
-    requestAnimationFrame(draw);
-  }
-
-  window.addEventListener("resize", resize);
-  resize();
-  draw();
+  },
+  retina_detect: true
 });
