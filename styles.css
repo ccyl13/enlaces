@@ -1,100 +1,77 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
 
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-  background-color: #0f0f0f;
+  background: #111;
   color: white;
   overflow-x: hidden;
+  position: relative;
 }
 
-#background {
-  position: fixed;
+#particles-js {
+  position: absolute;
   width: 100%;
   height: 100%;
-  z-index: -1;
-}
-
-.dot {
-  position: absolute;
-  width: 3px;
-  height: 3px;
-  background: white;
-  opacity: 0.1;
-  border-radius: 50%;
-  animation: float 10s linear infinite;
-}
-
-@keyframes float {
-  0% { transform: translateY(0); opacity: 0.1; }
-  100% { transform: translateY(-100vh); opacity: 0; }
+  z-index: 0;
 }
 
 .container {
-  max-width: 500px;
-  margin: 50px auto;
-  padding: 20px;
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 0 auto;
   text-align: center;
-}
-
-.top-link {
-  display: inline-block;
-  margin-bottom: 20px;
-}
-.top-icon {
-  width: 30px;
-  height: 30px;
+  padding: 4rem 1rem;
 }
 
 .profile-img {
   width: 140px;
   height: 140px;
   border-radius: 50%;
+  border: 3px solid #222;
+  box-shadow: 0 0 30px rgba(0, 153, 255, 0.4);
   object-fit: cover;
-  margin-bottom: 20px;
-  box-shadow: 0 0 20px #00bfff70;
 }
 
 h1 {
-  font-size: 28px;
-  margin-bottom: 10px;
+  margin-top: 1rem;
+  font-size: 1.8rem;
 }
 
-.description {
-  font-size: 16px;
-  color: #ccc;
-  margin-bottom: 30px;
+p {
+  color: #c4c4c4;
+  margin-bottom: 2rem;
 }
 
-.link-list {
+.button-container {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 1rem;
 }
 
-.link-button {
+.link-btn {
   display: flex;
   align-items: center;
-  gap: 12px;
   justify-content: center;
-  padding: 12px 20px;
-  background-color: #1e1e1e;
+  gap: 0.6rem;
+  padding: 1rem;
+  background-color: #1f1f1f;
   color: white;
   border: 1px solid #333;
   border-radius: 10px;
   text-decoration: none;
   font-weight: 600;
-  transition: all 0.3s ease;
+  transition: background 0.3s, transform 0.3s, color 0.3s;
 }
 
-.link-button:hover {
-  background-color: #292929;
-  transform: scale(1.03);
-  box-shadow: 0 0 10px rgba(255,255,255,0.1);
+.link-btn:hover {
+  background-color: #2b2b2b;
+  transform: translateY(-3px);
+  color: #00ccff;
 }
 
-.link-button img {
+.icon {
   width: 20px;
   height: 20px;
-  filter: drop-shadow(0 0 2px rgba(255,255,255,0.2));
 }
